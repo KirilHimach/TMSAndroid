@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TMCAndroid"
         tools:targetApi="31">
+
+        <activity
+            android:name=".Animals"
+            android:exported="false"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.TMCAndroid" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

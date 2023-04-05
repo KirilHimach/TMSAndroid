@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TMCAndroid</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="start">Start</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="create_a_cat">Create a cat</string>
+    <string name="create_a_tiger">Create a tiger</string>
 </resources>
