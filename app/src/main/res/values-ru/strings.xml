@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_to_first_activity">Добро пожаловать на первый экран</string>
+    <string name="start">Старт</string>
+    <string name="car">Машина</string>
+    <string name="fruit">Фрукт</string>
+    <string name="gadget">Гаджет</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttonCustom" parent="ThemeOverlay.Material3.Dark">
+        <item name="android:textColor">#F6082C</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>

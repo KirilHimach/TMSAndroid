@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">TMCAndroid</string>
+    <string name="app_name" translatable="false">TMCAndroid</string>
+    <string name="welcome_to_first_activity">Welcome to first activity</string>
+    <string name="start">Start</string>
+    <string name="car">Car</string>
+    <string name="fruit">Fruit</string>
+    <string name="gadget">Gadget</string>
 </resources>
