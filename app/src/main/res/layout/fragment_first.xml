@@ -65,6 +65,5 @@
         android:layout_marginTop="25dp"
         android:text="@string/log_in"
         android:textSize="20sp"
-        android:backgroundTint="@color/red"
-        android:enabled="false"/>
+        android:backgroundTint="@color/red" />
 </LinearLayout>

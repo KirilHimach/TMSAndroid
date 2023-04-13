@@ -34,9 +34,7 @@ class FirstFragment : Fragment() {
         }
         binding.logInButton.setOnClickListener {
             if (binding.usernameEditText.length() > 0) {
-                binding.logInButton.setOnClickListener {
-                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-                }
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             }
         }
     }
