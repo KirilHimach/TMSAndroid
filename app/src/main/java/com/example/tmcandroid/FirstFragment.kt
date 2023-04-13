@@ -1,18 +1,11 @@
 package com.example.tmcandroid
 
 import android.os.Bundle
-<<<<<<< HEAD
-import android.util.Log
-=======
->>>>>>> origin/feature/task_3_Himach
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
 import androidx.core.widget.doOnTextChanged
-=======
->>>>>>> origin/feature/task_3_Himach
 import androidx.navigation.fragment.findNavController
 import com.example.tmcandroid.databinding.FragmentFirstBinding
 
@@ -32,7 +25,6 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-<<<<<<< HEAD
         goToSecondFragment()
     }
 
@@ -42,16 +34,9 @@ class FirstFragment : Fragment() {
         }
         binding.logInButton.setOnClickListener {
             if (binding.usernameEditText.length() > 0) {
-=======
-        checkLoginAndPassword()
-    }
-
-    private fun checkLoginAndPassword() {
-        binding.logInButton.setOnClickListener {
-            if (binding.passwordEditText.length() >= 8
-                && binding.usernameEditText.length() > 0) {
->>>>>>> origin/feature/task_3_Himach
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                binding.logInButton.setOnClickListener {
+                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                }
             }
         }
     }
