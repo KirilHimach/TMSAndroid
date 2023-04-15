@@ -1,6 +1,8 @@
 package com.example.tmcandroid
 
 import android.os.Bundle
+import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,15 +31,22 @@ class FirstFragment : Fragment() {
     }
 
     private fun goToSecondFragment() {
-        binding.passwordEditText.doOnTextChanged { text1, start1, before1, count1 ->
-            binding.logInButton.isEnabled = text1!!.length >= 8
+        var passwordCount = 0
+        var loginCount = 0
+        binding.passwordEditText.doOnTextChanged { text, start, before, count ->
+            passwordCount = text!!.length
+            enableButton(passwordCount, loginCount)
+        }
+        binding.usernameEditText.doOnTextChanged { text, start, before, count ->
+            loginCount = text!!.length
+            enableButton(passwordCount, loginCount)
         }
         binding.logInButton.setOnClickListener {
-            if (binding.usernameEditText.length() > 0) {
-                binding.logInButton.setOnClickListener {
-                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-                }
-            }
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
+    private fun enableButton(password: Int, login: Int) {
+        binding.logInButton.isEnabled = password >= 8 && login > 0
+    }
+
 }

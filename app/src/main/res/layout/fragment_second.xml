@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,21 +7,121 @@
     tools:context=".SecondFragment">
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/formView"
+        style="@style/mainStileString"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/form"
+        android:textSize="35sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/formView"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="8dp"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_firstname_and_lastname"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/gender"
+        style="@style/mainStileString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usernameInputLayout"
+        android:layout_marginStart="30dp"
+        android:text="@string/gender"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/genderGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gender"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/gender"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/date"
+        style="@style/mainStileString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender"
+        android:layout_marginStart="30dp"
+        android:text="@string/date"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spinner_day_fragment_two"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/date"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/date"
+        android:backgroundTint="@color/red"
+        android:entries="@array/days"/>
+
+    <Spinner
+        android:id="@+id/spinnerMonthFragmentTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/date"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/spinner_day_fragment_two"
+        android:backgroundTint="@color/red" />
+
+    <Spinner
+        android:id="@+id/spinnerYearFragmentTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/date"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/spinnerMonthFragmentTwo"
+        android:backgroundTint="@color/red" />
+
+    <ListView
+        android:id="@+id/listViewId"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/date"
+        android:layout_marginHorizontal="30dp"
+        android:divider="@color/red"/>
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/next"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
