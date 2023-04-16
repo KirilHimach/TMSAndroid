@@ -1,14 +1,13 @@
-package com.example.tmcandroid
+package com.example.tmcandroid.fragments
 
 import android.os.Bundle
-import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
+import com.example.tmcandroid.R
 import com.example.tmcandroid.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
@@ -30,21 +29,31 @@ class FirstFragment : Fragment() {
         goToSecondFragment()
     }
 
+    /**
+     * First of all, this method reacts on changes in
+     * passwordEditText and usernameEditText. When there are changes,
+     * the method will call enableButton() method and active/deactivate button.
+     */
     private fun goToSecondFragment() {
-        var passwordCount = 0
-        var loginCount = 0
+        var passwordLength = 0
+        var loginLength = 0
         binding.passwordEditText.doOnTextChanged { text, start, before, count ->
-            passwordCount = text!!.length
-            enableButton(passwordCount, loginCount)
+             if (text != null) {
+                 passwordLength = text.length
+                 enableButton(passwordLength, loginLength)
+            }
         }
         binding.usernameEditText.doOnTextChanged { text, start, before, count ->
-            loginCount = text!!.length
-            enableButton(passwordCount, loginCount)
+            if (text != null) {
+                loginLength = text.length
+                enableButton(passwordLength, loginLength)
+            }
         }
         binding.logInButton.setOnClickListener {
                 findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
+
     private fun enableButton(password: Int, login: Int) {
         binding.logInButton.isEnabled = password >= 8 && login > 0
     }

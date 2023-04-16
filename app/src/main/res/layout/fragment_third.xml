@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThirdFragment">
+    tools:context=".fragments.ThirdFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewId"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:scrollbars="horizontal"/>
 
 </FrameLayout>

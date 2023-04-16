@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".fragments.SecondFragment">
 
     <TextView
         android:id="@+id/formView"
@@ -110,7 +110,7 @@
         android:layout_height="200dp"
         android:layout_below="@+id/date"
         android:layout_marginHorizontal="30dp"
-        android:divider="@color/red"/>
+        android:background="@color/white"/>
 
     <Button
         android:id="@+id/nextButton"
