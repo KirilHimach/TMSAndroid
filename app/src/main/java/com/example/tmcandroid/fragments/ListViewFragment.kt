@@ -11,12 +11,13 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.tmcandroid.adapters.MyListViewAdapter
 import com.example.tmcandroid.R
-import com.example.tmcandroid.databinding.FragmentSecondBinding
+import com.example.tmcandroid.data.User
+import com.example.tmcandroid.databinding.ListviewFragmentBinding
 import kotlin.random.Random
 
-class SecondFragment : Fragment() {
+class ListViewFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: ListviewFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,7 +25,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = ListviewFragmentBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -33,7 +34,7 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.nextButton.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_ThirdFragment)
+            findNavController().navigate(R.id.action_ListViewFragment_to_RecyclerViewFragment)
         }
         createMonthSpinner()
         createYearSpinner()
@@ -48,6 +49,12 @@ class SecondFragment : Fragment() {
         binding.listViewId.apply {
             adapter = MyListViewAdapter(requireActivity(), userFactory())
         }
+
+        //NOT REALISED
+        // OnClick Event that will display the Name of the Item in a toast
+//        itemsListView.setOnItemClickListener { parent, view, position, id ->
+//            val element = adapter.getItem(position)
+//            toast(element.toString())
     }
 
     private fun userFactory() : Array<User> {

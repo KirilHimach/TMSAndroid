@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
 import com.example.tmcandroid.R
-import com.example.tmcandroid.databinding.FragmentFirstBinding
+import com.example.tmcandroid.databinding.LoginFragmentBinding
 
-class FirstFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: LoginFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,7 +20,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = LoginFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -50,7 +50,7 @@ class FirstFragment : Fragment() {
             }
         }
         binding.logInButton.setOnClickListener {
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                findNavController().navigate(R.id.action_LoginFragment_to_ListViewFragment)
         }
     }
 

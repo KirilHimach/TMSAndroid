@@ -4,16 +4,13 @@
     <string name="inter_username_or_email">Username or Email</string>
     <string name="password">Password</string>
     <string name="log_in">Log in</string>
-    <string name="name">Name</string>
     <string name="title_activity_my_app">MyApp</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="login_fragment_label">Login Fragment</string>
+    <string name="listview_fragment_label">ListView Fragment</string>
+    <string name="recycler_fragment_label">Recycler Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="form">Form</string>
     <string name="your_firstname_and_lastname">Your firstname and lastname</string>
     <string name="gender">Gender:</string>
@@ -30,5 +27,9 @@
         <item>Saturday</item>
         <item>Sunday</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_fragment">Splash Fragment</string>
+    <string name="my_first_splash">My first Splash</string>
 
 </resources>

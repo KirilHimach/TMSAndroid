@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.tmcandroid.R
-import com.example.tmcandroid.fragments.User
+import com.example.tmcandroid.data.User
 
 class MyListViewAdapter(
     context: Context,
@@ -31,12 +31,12 @@ class MyListViewAdapter(
         var convertView: View? = view
         if (convertView == null) {
             convertView = LayoutInflater.from(_context)
-                .inflate(R.layout.list_item_fragment_second, viewGroup, false)
+                .inflate(R.layout.list_item_fragment_listview, viewGroup, false)
         }
         val item = getItem(itemNumber) as User
         val textViewItemUserName = convertView?.findViewById(R.id.recyclerUserName) as TextView
-        val textViewItemUserAge = convertView.findViewById(R.id.recyclerUserAge) as TextView
-        val textViewItemUserWeight = convertView.findViewById(R.id.recyclerUserWeight) as TextView
+        val textViewItemUserAge = convertView.findViewById(R.id.recyclerUserCity) as TextView
+        val textViewItemUserWeight = convertView.findViewById(R.id.recyclerUserAge) as TextView
 
         textViewItemUserName.text = item.name
         textViewItemUserAge.text = item.age.toString()

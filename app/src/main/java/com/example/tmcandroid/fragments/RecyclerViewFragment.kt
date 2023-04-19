@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmcandroid.adapters.MyRecyclerViewAdapter
-import com.example.tmcandroid.databinding.FragmentThirdBinding
+import com.example.tmcandroid.data.FakeUser
+import com.example.tmcandroid.data.FakeUserFactory
+import com.example.tmcandroid.databinding.RecyclerviewFragmentBinding
 import kotlin.random.Random
 
 
-class ThirdFragment : Fragment() {
-    private var _binding: FragmentThirdBinding? = null
+class RecyclerViewFragment : Fragment() {
+    private var _binding: RecyclerviewFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,7 +22,7 @@ class ThirdFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentThirdBinding.inflate(inflater, container, false)
+        _binding = RecyclerviewFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -40,7 +42,7 @@ class ThirdFragment : Fragment() {
         }
     }
 
-    private fun userFactory() : Array<User> {
-        return Array(70) {i -> User("User$i", i, Random.nextInt(20, 300)) }
+    private fun userFactory() : List<FakeUser> {
+        return FakeUserFactory().getFakeUser()
     }
 }

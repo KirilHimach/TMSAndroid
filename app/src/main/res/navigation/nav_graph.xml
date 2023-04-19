@@ -3,32 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/LoginFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.tmcandroid.fragments.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.tmcandroid.fragments.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/LoginFragment"
+        android:name="com.example.tmcandroid.fragments.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/login_fragment">
 
         <action
-            android:id="@+id/action_SecondFragment_to_ThirdFragment"
-            app:destination="@id/thirdFragment" />
+            android:id="@+id/action_LoginFragment_to_ListViewFragment"
+            app:destination="@id/ListViewFragment" />
     </fragment>
     <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.tmcandroid.fragments.ThirdFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        android:id="@+id/ListViewFragment"
+        android:name="com.example.tmcandroid.fragments.ListViewFragment"
+        android:label="@string/listview_fragment_label"
+        tools:layout="@layout/listview_fragment">
+
+        <action
+            android:id="@+id/action_ListViewFragment_to_RecyclerViewFragment"
+            app:destination="@id/RecyclerViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RecyclerViewFragment"
+        android:name="com.example.tmcandroid.fragments.RecyclerViewFragment"
+        android:label="@string/recycler_fragment_label"
+        tools:layout="@layout/recyclerview_fragment" />
+
 
 </navigation>

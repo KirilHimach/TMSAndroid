@@ -1,6 +1,8 @@
 package com.example.tmcandroid
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.google.android.material.snackbar.Snackbar
@@ -29,9 +31,4 @@ class MyApp : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_my_app)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
 }
