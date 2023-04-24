@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="10dp"
+    app:cardElevation="15dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/newsImage"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="4dp"
+            app:civ_border_color="@color/green"
+            app:civ_border_width="2dp"
+            tools:src="@drawable/splash_icon_200x200" />
+
+        <TextView
+            android:id="@+id/newsName"
+            style="@style/itemStile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginVertical="4dp"
+            android:layout_toEndOf="@+id/newsImage"
+            tools:text="Firstname Lastname" />
+
+        <TextView
+            android:id="@+id/newsLocation"
+            style="@style/itemStile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsName"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginVertical="4dp"
+            android:layout_toEndOf="@+id/newsImage"
+            tools:text="City" />
+
+        <TextView
+            android:id="@+id/newsBirthday"
+            style="@style/itemStile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsLocation"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginVertical="4dp"
+            android:layout_toEndOf="@+id/newsImage"
+            tools:text="Age" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

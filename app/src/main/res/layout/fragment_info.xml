@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.InfoFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/infoToolbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.TMCAndroid.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/infoToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/infoImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/infoToolbarLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:civ_border_color="@color/green"
+        app:civ_border_width="2dp"
+        tools:src="@drawable/splash_icon_200x200" />
+
+    <TextView
+        android:id="@+id/infoName"
+        style="@style/itemStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="16dp"
+        android:textSize="35sp"
+        tools:text="Firstname lastname" />
+
+    <TextView
+        android:id="@+id/infoBirthday"
+        style="@style/itemStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoName"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/birthday" />
+
+    <TextView
+        android:id="@+id/infoAge"
+        style="@style/itemStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoBirthday"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/age" />
+
+    <TextView
+        android:id="@+id/infoLocation"
+        style="@style/itemStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoAge"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:drawablePadding="10dp"
+        app:drawableStartCompat="@drawable/baseline_location_24"
+        tools:text="Location" />
+
+    <TextView
+        android:id="@+id/infoPhone"
+        style="@style/itemStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoLocation"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:drawablePadding="10dp"
+        app:drawableStartCompat="@drawable/baseline_phone_24"
+        tools:text="Phone" />
+
+    <TextView
+        android:id="@+id/infoEmail"
+        style="@style/itemStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoPhone"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:drawablePadding="10dp"
+        app:drawableStartCompat="@drawable/baseline_email_24"
+        tools:text="Email" />
+
+
+</RelativeLayout>

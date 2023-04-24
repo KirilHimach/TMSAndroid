@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TMCAndroid</string>
+    <string name="title_activity_my_app">MyApp</string>
+    <string name="login_fragment_label">Login Fragment</string>
+    <string name="news_fragment_label">News Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="welcome_to_the_app">Welcome to the app</string>
+    <string name="inter_username_or_email">Inter username or email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="info_fragment">Info fragment</string>
+    <string name="age">Age:</string>
+    <string name="birthday">Birthday:</string>
 </resources>
