@@ -16,15 +16,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.toFirst.setOnClickListener {
-            transaction(FirstFragment())
+            onNextFragment(FirstFragment())
         }
 
         binding.toSecond.setOnClickListener {
-            transaction(SecondFragment())
+            onNextFragment(SecondFragment())
         }
     }
 
-    private fun transaction(fragment: Fragment) {
+    private fun onNextFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .add(R.id.main_fragment_container, fragment)

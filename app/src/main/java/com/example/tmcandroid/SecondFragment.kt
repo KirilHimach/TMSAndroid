@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.example.tmcandroid.databinding.FragmentSecondBinding
 
 
@@ -28,11 +27,11 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSecond.setOnClickListener {
-            onNextFragment()
+            onFirstFragment()
         }
     }
 
-    private fun onNextFragment() {
+    private fun onFirstFragment() {
         parentFragmentManager
             .beginTransaction()
             .replace(R.id.main_fragment_container, FirstFragment())
