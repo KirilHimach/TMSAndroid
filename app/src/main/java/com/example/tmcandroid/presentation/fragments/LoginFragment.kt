@@ -1,4 +1,4 @@
-package com.example.tmcandroid.fragments
+package com.example.tmcandroid.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

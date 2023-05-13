@@ -14,7 +14,7 @@
         android:theme="@style/Theme.TMCAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".presentation.activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.BasicActivity"
+            android:name=".presentation.activities.BasicActivity"
             android:exported="false"
             android:label="@string/title_activity_my_app"
             android:theme="@style/Theme.TMCAndroid.NoActionBar" />

@@ -1,4 +1,4 @@
-package com.example.tmcandroid.activities
+package com.example.tmcandroid.presentation.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
