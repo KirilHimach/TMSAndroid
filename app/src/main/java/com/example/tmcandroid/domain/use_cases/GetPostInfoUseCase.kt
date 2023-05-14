@@ -1,10 +1,16 @@
 package com.example.tmcandroid.domain.use_cases
 
 import com.example.tmcandroid.data.remote.dto.toPostInfo
-import com.example.tmcandroid.data.repositories.PostsRepositoryImpl
+import com.example.tmcandroid.domain.repository.PostRepositoryDomain
+import javax.inject.Inject
+import javax.inject.Singleton
 
-//Step 7. This is one of the way of getting model from "data".
-class GetPostInfoUseCase {
+//Step 3.
+@Singleton
+class GetPostInfoUseCase @Inject constructor(
+    private val postRepositoryDomain: PostRepositoryDomain
+) {
     fun getPostsInfo() =
-        PostsRepositoryImpl().getPostInfo().toPostInfo()
+        postRepositoryDomain.getPostInfo().toPostInfo()
+
 }

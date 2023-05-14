@@ -5,33 +5,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.tmcandroid.R
 import com.example.tmcandroid.databinding.FragmentInfoBinding
 import com.example.tmcandroid.domain.models.PostInfo
 import com.example.tmcandroid.presentation.view_models.PostInfoViewModel
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 
-
+//Step 2. Create entry point annotations for injecting dependencies.
+@AndroidEntryPoint
 class InfoFragment : Fragment() {
 
     private lateinit var binding: FragmentInfoBinding
-    private var postsInfoViewModel: PostInfoViewModel? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        postsInfoViewModel = ViewModelProvider(owner = this)[PostInfoViewModel::class.java]
-    }
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        postsInfoViewModel = ViewModelProvider(this).[PostInfoViewModel::class.java]
-//    }
+    private val postsInfoViewModel: PostInfoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentInfoBinding.inflate(inflater, container, false)
         return binding.root
@@ -39,7 +32,7 @@ class InfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val postInfo = postsInfoViewModel?.postInfo?.value ?: PostInfo()
+        val postInfo = postsInfoViewModel.postInfo.value ?: PostInfo()
         enableToolbar()
         showInfoFragment(postInfo)
     }

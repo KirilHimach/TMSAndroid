@@ -2,13 +2,12 @@ package com.example.tmcandroid.data.repositories.remote
 
 import com.example.tmcandroid.data.remote.dto.PostDto
 
-//Step 3. We are get the response from the server hire.
 class PostsRemoteImpl : PostsRemote {
     override fun getPosts(): List<PostDto> =
-        mutableListOf(
+         mutableListOf(
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -16,7 +15,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -24,7 +23,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -32,7 +31,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -40,7 +39,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -48,7 +47,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -56,7 +55,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -64,7 +63,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -72,7 +71,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -80,7 +79,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -88,7 +87,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",
@@ -96,7 +95,7 @@ class PostsRemoteImpl : PostsRemote {
             ),
             PostDto(
                 name = "Bob White",
-                location =  "Minsk",
+                location = "Minsk",
                 email = "bobwhite@mail.ru",
                 dob = "05.11.1990",
                 phone = "+375297235613",

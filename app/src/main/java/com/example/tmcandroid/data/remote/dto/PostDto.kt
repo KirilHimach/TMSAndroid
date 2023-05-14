@@ -4,7 +4,6 @@ import com.example.tmcandroid.domain.models.PostInfo
 import com.example.tmcandroid.domain.models.PostNews
 import com.example.tmcandroid.domain.models.PostNewsList
 
-//Step 1. Create model for response from server.
 data class PostDto(
     val name: String?,
     val location: String?,

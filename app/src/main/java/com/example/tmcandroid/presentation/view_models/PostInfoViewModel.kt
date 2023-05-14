@@ -5,9 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.tmcandroid.domain.models.PostInfo
 import com.example.tmcandroid.domain.use_cases.GetPostInfoUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-//Step 8. This is point of getting models from "domain".
-open class PostInfoViewModel : ViewModel() {
+//Step 4.
+@HiltViewModel
+class PostInfoViewModel @Inject constructor(
+    private val getPostInfoUseCase: GetPostInfoUseCase
+) : ViewModel() {
     private val _postInfo = MutableLiveData<PostInfo>()
     val postInfo: LiveData<PostInfo> = _postInfo
 
@@ -16,6 +21,6 @@ open class PostInfoViewModel : ViewModel() {
     }
 
     private fun getPostInfo() {
-        _postInfo.value = GetPostInfoUseCase().getPostsInfo()
+        _postInfo.value = getPostInfoUseCase.getPostsInfo()
     }
 }
