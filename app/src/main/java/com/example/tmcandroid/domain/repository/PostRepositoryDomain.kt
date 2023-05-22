@@ -5,7 +5,5 @@ import com.example.tmcandroid.data.remote.dto.PostDto
 //Step 6. It`s the point of connect to "PostsRepositoryImpl".
 interface PostRepositoryDomain {
 
-    fun getPostsNews() : List<PostDto>
-
-    fun getPostInfo() : PostDto
+    suspend fun getPostsNews() : List<PostDto>
 }

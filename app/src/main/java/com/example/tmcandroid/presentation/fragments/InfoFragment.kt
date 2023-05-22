@@ -52,14 +52,14 @@ class InfoFragment : Fragment() {
      * This method fills in the fields of the card.
      */
     private fun showInfoFragment(postInfo: PostInfo) {
-        binding.infoName.text = postInfo.name
-        binding.infoLocation.text = postInfo.location
-        binding.infoBirthday.append(" ${postInfo.dob}")
-        binding.infoAge.text = "36" //TODO
-        binding.infoEmail.text = postInfo.email
-        binding.infoPhone.text = postInfo.phone
-        Picasso.get()
-            .load(postInfo.picture)
-            .into(binding.infoImage)
+//        binding.infoName.text = postInfo.name
+//        binding.infoLocation.text = postInfo.location
+//        binding.infoBirthday.append(" ${postInfo.dob}")
+//        binding.infoAge.text = "36" //TODO
+//        binding.infoEmail.text = postInfo.email
+//        binding.infoPhone.text = postInfo.phone
+//        Picasso.get()
+//            .load(postInfo.picture)
+//            .into(binding.infoImage)
     }
 }

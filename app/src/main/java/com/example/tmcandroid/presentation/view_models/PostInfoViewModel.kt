@@ -3,9 +3,11 @@ package com.example.tmcandroid.presentation.view_models
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.tmcandroid.domain.models.PostInfo
 import com.example.tmcandroid.domain.use_cases.GetPostInfoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 //Step 4.
@@ -17,10 +19,12 @@ class PostInfoViewModel @Inject constructor(
     val postInfo: LiveData<PostInfo> = _postInfo
 
     init {
-        getPostInfo()
+        viewModelScope.launch {
+            getPostInfo()
+        }
     }
 
-    private fun getPostInfo() {
-        _postInfo.value = getPostInfoUseCase.getPostsInfo()
+    private suspend fun getPostInfo() {
+        //_postInfo.value = getPostInfoUseCase.getPostsInfo()
     }
 }

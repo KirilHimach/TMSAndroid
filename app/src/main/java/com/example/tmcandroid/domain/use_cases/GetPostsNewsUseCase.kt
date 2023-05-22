@@ -1,8 +1,7 @@
 package com.example.tmcandroid.domain.use_cases
 
-import android.util.Log
-import com.example.tmcandroid.data.remote.dto.toPostNewsList
-import com.example.tmcandroid.data.repositories.PostsRepositoryImpl
+import com.example.tmcandroid.data.remote.dto.toPostNews
+import com.example.tmcandroid.domain.models.PostNews
 import com.example.tmcandroid.domain.repository.PostRepositoryDomain
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -13,6 +12,8 @@ import javax.inject.Singleton
 class GetPostsNewsUseCase @Inject constructor(
     private val postRepositoryDomain: PostRepositoryDomain
 ) {
-    fun getPostsNews() =
-       postRepositoryDomain.getPostsNews().toPostNewsList()
+    suspend fun getPostsNews(): List<PostNews> =
+       postRepositoryDomain.getPostsNews().map { postDto ->
+           postDto.toPostNews()
+       }
 }

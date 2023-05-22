@@ -1,17 +1,24 @@
 package com.example.tmcandroid.presentation.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.tmcandroid.R
-import com.example.tmcandroid.domain.models.PostNewsList
+import com.example.tmcandroid.domain.models.PostNews
+import com.example.tmcandroid.presentation.activities.BasicActivity
+import com.example.tmcandroid.presentation.activities.HiltApp
+import com.example.tmcandroid.presentation.fragments.NewsFragment
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.withContext
 
 class NewsFragmentAdapter(
-    private val items: PostNewsList,
+    private var context: Context,
+    private val items: List<PostNews>,
     private val onItemClickListener: (View) -> Unit
 ) :
     RecyclerView.Adapter<NewsFragmentAdapter.RecyclerFragmentHolder>() {
@@ -40,15 +47,16 @@ class NewsFragmentAdapter(
         return RecyclerFragmentHolder(view)
     }
 
-    override fun getItemCount() = items.posts.size
+    override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: RecyclerFragmentHolder, position: Int) {
         holder.apply {
-            nameTextView.text = items.posts[position].name
-            ageTextView.text = "36" //TODO
-            cityTextView.text = items.posts[position].location
-            Picasso.get()
-                .load(items.posts[position].picture)
+            nameTextView.text = items[position].author
+            ageTextView.text = "" //TODO
+            cityTextView.text = items[position].title
+            Glide
+                .with(context)
+                .load(items[position].urlToImage)
                 .into(avatarImageView)
         }
     }
