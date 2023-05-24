@@ -11,9 +11,12 @@
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
 
+        <!--app:destination="@id/NewsFragment"-->
         <action
             android:id="@+id/action_LoginFragment_to_NewsFragment"
-            app:destination="@id/NewsFragment" />
+            app:destination="@id/TestFragment"
+
+            />
     </fragment>
     <fragment
         android:id="@+id/NewsFragment"
@@ -35,5 +38,10 @@
             android:id="@+id/action_Info_Fragment_to_News_Fragment"
             app:destination="@id/NewsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/TestFragment"
+        android:name="com.example.tmcandroid.presentation.fragments.TestFragment"
+        android:label="@string/test_fragment"
+        tools:layout="@layout/fragment_test" />
 
 </navigation>
