@@ -11,10 +11,10 @@
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
 
-        <!--app:destination="@id/NewsFragment"-->
+        <!--TODO-->
         <action
             android:id="@+id/action_LoginFragment_to_NewsFragment"
-            app:destination="@id/TestFragment"
+            app:destination="@id/NewsFragment"
 
             />
     </fragment>

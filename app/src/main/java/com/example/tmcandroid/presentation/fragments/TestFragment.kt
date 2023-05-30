@@ -10,11 +10,18 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
 import com.example.tmcandroid.databinding.FragmentTestBinding
 import com.example.tmcandroid.presentation.view_models.TestViewModel
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.newSingleThreadContext
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 class TestFragment : Fragment() {
@@ -75,13 +82,13 @@ class TestFragment : Fragment() {
 
     private suspend fun downloadTwo() = withContext(IO) {
         Log.d("TEST_ANDROID", "Downloading TWO.....")
-        delay(3000)
+       // delay(3000)
         Log.d("TEST_ANDROID", "The TWO is downloaded!!!!!!!!")
     }
 
     private suspend fun downloadThree() = withContext(IO) {
         Log.d("TEST_ANDROID", "Downloading THREE.....")
-        delay(3000)
+        delay(2000)
         Log.d("TEST_ANDROID", "The THREE is downloaded!!!!!!!!")
     }
 
@@ -105,7 +112,7 @@ class TestFragment : Fragment() {
 
     private suspend fun downloadSeven() = withContext(IO) {
         Log.d("TEST_ANDROID", "Downloading SEVEN.....")
-        delay(3000)
+        delay(1000)
         Log.d("TEST_ANDROID", "The SEVEN is downloaded!!!!!!!!")
     }
 
@@ -117,13 +124,13 @@ class TestFragment : Fragment() {
 
     private suspend fun downloadNine() = withContext(IO) {
         Log.d("TEST_ANDROID", "Downloading NINE.....")
-        delay(3000)
+        delay(2000)
         Log.d("TEST_ANDROID", "The NINE is downloaded!!!!!!!!")
     }
 
     private suspend fun downloadTen() = withContext(IO) {
         Log.d("TEST_ANDROID", "Downloading TEN.....")
-        delay(3000)
+        //delay(3000)
         Log.d("TEST_ANDROID", "The TEN is downloaded!!!!!!!!")
     }
 }

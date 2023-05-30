@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "108891995392",
+    "project_id": "tmcandroid-af13b",
+    "storage_bucket": "tmcandroid-af13b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108891995392:android:aeca0ea66acf94cb5607e5",
+        "android_client_info": {
+          "package_name": "com.example.tmcandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108891995392-trojvegci47loq6rd13udchhdfbe2qbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tmcandroid",
+            "certificate_hash": "409a3774d2ddace89ae494ba615c96f722ac272e"
+          }
+        },
+        {
+          "client_id": "108891995392-47lmi6k3f3c3i28s833n4uspqo93n9eh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdAFzCnRulac2R4vcRLMXGOAblDxrJtuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108891995392-47lmi6k3f3c3i28s833n4uspqo93n9eh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
