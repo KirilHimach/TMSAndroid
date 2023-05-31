@@ -3,19 +3,29 @@ package com.example.tmcandroid.presentation.view_models
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.tmcandroid.domain.models.PostInfo
-import com.example.tmcandroid.domain.use_cases.GetPostInfoUseCase
+import androidx.lifecycle.viewModelScope
+import com.example.tmcandroid.domain.models.PostNews
+import com.example.tmcandroid.domain.use_cases.GetLocalPostUseCase
+import kotlinx.coroutines.launch
+import org.koin.dsl.module
 
-//Step 8. This is point of getting models from "domain".
-open class PostInfoViewModel : ViewModel() {
-    private val _postInfo = MutableLiveData<PostInfo>()
-    val postInfo: LiveData<PostInfo> = _postInfo
+
+val postInfoViewModelModule = module {
+    single { PostInfoViewModel(get()) }
+}
+open class PostInfoViewModel(
+    private val getLocalPostUseCase: GetLocalPostUseCase
+) : ViewModel() {
+    private val _postInfo = MutableLiveData<PostNews>()
+    val postInfo: LiveData<PostNews> = _postInfo
 
     init {
-        getPostInfo()
+        viewModelScope.launch {
+            getPostInfo()
+        }
     }
 
-    private fun getPostInfo() {
-        _postInfo.value = GetPostInfoUseCase().getPostsInfo()
+    private suspend fun getPostInfo() {
+        _postInfo.value = getLocalPostUseCase.getPostInfoById()
     }
 }

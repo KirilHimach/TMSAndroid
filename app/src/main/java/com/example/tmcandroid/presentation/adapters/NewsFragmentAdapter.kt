@@ -7,11 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmcandroid.R
-import com.example.tmcandroid.domain.models.PostNewsList
+import com.example.tmcandroid.domain.models.PostNews
 import com.squareup.picasso.Picasso
 
 class NewsFragmentAdapter(
-    private val items: PostNewsList,
+    private val items: List<PostNews>,
     private val onItemClickListener: (View) -> Unit
 ) :
     RecyclerView.Adapter<NewsFragmentAdapter.RecyclerFragmentHolder>() {
@@ -40,15 +40,15 @@ class NewsFragmentAdapter(
         return RecyclerFragmentHolder(view)
     }
 
-    override fun getItemCount() = items.posts.size
+    override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: RecyclerFragmentHolder, position: Int) {
         holder.apply {
-            nameTextView.text = items.posts[position].name
-            ageTextView.text = "36" //TODO
-            cityTextView.text = items.posts[position].location
+            nameTextView.text = items[position].author
+            ageTextView.text = "" //TODO
+            cityTextView.text = items[position].title
             Picasso.get()
-                .load(items.posts[position].picture)
+                .load(items[position].urlToImage)
                 .into(avatarImageView)
         }
     }

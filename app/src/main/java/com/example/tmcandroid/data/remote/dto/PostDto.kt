@@ -1,42 +1,41 @@
 package com.example.tmcandroid.data.remote.dto
 
-import com.example.tmcandroid.domain.models.PostInfo
+import com.example.tmcandroid.data.local.Post
 import com.example.tmcandroid.domain.models.PostNews
-import com.example.tmcandroid.domain.models.PostNewsList
+import com.google.gson.annotations.SerializedName
 
-//Step 1. Create model for response from server.
 data class PostDto(
-    val name: String?,
-    val location: String?,
-    val email: String?,
-    val dob: String?,
-    val phone: String?,
-    val picture: String?
+    @SerializedName("author")
+    val author: String,
+    @SerializedName("title")
+    val title: String,
+    @SerializedName("description")
+    val description: String,
+    @SerializedName("url")
+    val url: String,
+    @SerializedName("urlToImage")
+    val urlToImage: String,
+    @SerializedName("publishedAt")
+    val publishedAt: String,
+    @SerializedName("content")
+    val content: String
 )
 
 fun PostDto.toPostNews() =
     PostNews(
-        name = name,
-        location = location,
-        dob = dob,
-        picture = picture
+        author = author,
+        title = title,
+        description = description,
+        urlToImage = urlToImage,
+        publishedAt = publishedAt,
     )
 
-
-fun PostDto.toPostInfo() =
-    PostInfo(
-        name = name,
-        location = location,
-        email = email,
-        dob = dob,
-        phone = phone,
-        picture = picture
-    )
-
-
-fun List<PostDto>.toPostNewsList() =
-    PostNewsList(
-        this.map {
-            it.toPostNews()
-        }
+fun PostDto.toLocalPost() =
+    Post(
+        author = author,
+        title = title,
+        description = description,
+        url = url,
+        urlToImage = urlToImage,
+        publishedAt = publishedAt
     )

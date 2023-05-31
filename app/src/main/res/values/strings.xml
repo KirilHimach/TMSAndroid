@@ -11,5 +11,5 @@
     <string name="log_in">Log in</string>
     <string name="info_fragment">Info fragment</string>
     <string name="age">Age:</string>
-    <string name="birthday">Birthday:</string>
+    <string name="date">Date:</string>
 </resources>
