@@ -2,8 +2,6 @@ package com.example.tmcandroid.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.tmcandroid.data.local.Post
-import com.example.tmcandroid.data.local.PostsDatabase
 import org.koin.dsl.module
 
 val dataBaseModule = module {
@@ -12,16 +10,16 @@ val dataBaseModule = module {
     single { provideEntity() }
 }
 
-fun provideDataBase(context: Context): PostsDatabase =
+fun provideDataBase(context: Context): com.example.tmcandroid.data.local.PostsDatabase =
     Room.databaseBuilder(
-        context.applicationContext, PostsDatabase::class.java,
+        context.applicationContext, com.example.tmcandroid.data.local.PostsDatabase::class.java,
         "posts_db"
     )
         .fallbackToDestructiveMigration()
         .build()
 
-fun provideDao(db: PostsDatabase) = db.postsDao()
+fun provideDao(db: com.example.tmcandroid.data.local.PostsDatabase) = db.postsDao()
 
-fun provideEntity() = Post()
+fun provideEntity() = com.example.tmcandroid.data.local.Post()
 
 

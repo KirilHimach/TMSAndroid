@@ -10,4 +10,10 @@
     <color name="purple">#9C27B0</color>
     <color name="green">#8BC34A</color>
     <color name="red">#E91E63</color>
+    <color name="faceSmileColor">#F1DB1A</color>
+    <color name="rightEyeSmileColor">#673AB7</color>
+    <color name="leftEyeSmileColor">#009688</color>
+    <color name="mouthSmileColor">#FF5722</color>
+    <color name="borderSmileColor">#9C27B0</color>
+
 </resources>

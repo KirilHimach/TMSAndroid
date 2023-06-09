@@ -1,4 +1,4 @@
-package com.example.tmcandroid.domain.models
+package com.example.tmsandroid.domain.models
 
 data class PostNews(
     val author: String? = "",

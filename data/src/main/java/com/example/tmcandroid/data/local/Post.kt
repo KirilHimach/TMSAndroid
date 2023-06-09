@@ -3,7 +3,7 @@ package com.example.tmcandroid.data.local
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.tmcandroid.domain.models.PostNews
+import com.example.tmsandroid.domain.models.PostNews
 
 @Entity
 data class Post(

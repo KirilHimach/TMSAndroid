@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tmcandroid.domain.models.PostNews
-import com.example.tmcandroid.domain.use_cases.GetLocalPostUseCase
+import com.example.tmsandroid.domain.models.PostNews
+import com.example.tmsandroid.domain.use_cases.GetLocalPostUseCase
 import kotlinx.coroutines.launch
 import org.koin.dsl.module
 

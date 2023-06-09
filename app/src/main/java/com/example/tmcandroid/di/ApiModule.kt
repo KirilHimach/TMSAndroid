@@ -1,6 +1,5 @@
 package com.example.tmcandroid.di
 
-import com.example.tmcandroid.data.remote.api.PostsApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -35,5 +34,5 @@ fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-fun providePostApiService(retrofit: Retrofit): PostsApi =
-    retrofit.create(PostsApi::class.java)
+fun providePostApiService(retrofit: Retrofit): com.example.tmcandroid.data.remote.api.PostsApi =
+    retrofit.create(com.example.tmcandroid.data.remote.api.PostsApi::class.java)

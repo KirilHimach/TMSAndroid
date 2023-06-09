@@ -100,5 +100,4 @@
         app:drawableStartCompat="@drawable/baseline_email_24"
         tools:text="Email" />
 
-
 </RelativeLayout>

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmcandroid.R
 import com.example.tmcandroid.presentation.adapters.NewsFragmentAdapter
 import com.example.tmcandroid.databinding.FragmentNewsBinding
-import com.example.tmcandroid.domain.models.PostNews
+import com.example.tmsandroid.domain.models.PostNews
 import com.example.tmcandroid.presentation.view_models.PostsNewsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

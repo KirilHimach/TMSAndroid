@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmcandroid.R
-import com.example.tmcandroid.domain.models.PostNews
+import com.example.tmsandroid.domain.models.PostNews
 import com.squareup.picasso.Picasso
 
 class NewsFragmentAdapter(

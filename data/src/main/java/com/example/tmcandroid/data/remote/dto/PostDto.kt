@@ -1,7 +1,7 @@
 package com.example.tmcandroid.data.remote.dto
 
 import com.example.tmcandroid.data.local.Post
-import com.example.tmcandroid.domain.models.PostNews
+import com.example.tmsandroid.domain.models.PostNews
 import com.google.gson.annotations.SerializedName
 
 data class PostDto(
