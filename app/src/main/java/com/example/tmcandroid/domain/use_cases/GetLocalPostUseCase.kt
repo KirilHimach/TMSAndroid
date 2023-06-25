@@ -4,12 +4,9 @@ package com.example.tmcandroid.domain.use_cases
 import com.example.tmcandroid.data.local.toPostNews
 import com.example.tmcandroid.domain.models.PostNews
 import com.example.tmcandroid.domain.repositories.PostRepository
-import org.koin.dsl.module
+import javax.inject.Inject
 
-val getLocalPostUseCaseModule = module {
-    single { GetLocalPostUseCase(get()) }
-}
-class GetLocalPostUseCase(
+class GetLocalPostUseCase @Inject constructor(
     private val postRepository: PostRepository
 ) {
 

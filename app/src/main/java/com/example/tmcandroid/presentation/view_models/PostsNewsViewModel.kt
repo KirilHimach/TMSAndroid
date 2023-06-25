@@ -7,13 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.tmcandroid.domain.models.PostNews
 import com.example.tmcandroid.domain.use_cases.GetRemotePostsUseCase
 import kotlinx.coroutines.launch
-import org.koin.dsl.module
+import javax.inject.Inject
 
 
-val postsNewsViewModelModule = module {
-    single { PostsNewsViewModel(get()) }
-}
-open class PostsNewsViewModel(
+open class PostsNewsViewModel @Inject constructor(
     private val getRemotePostsUseCase: GetRemotePostsUseCase
 ) : ViewModel() {
 

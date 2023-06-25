@@ -8,16 +8,32 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.tmcandroid.R
 import com.example.tmcandroid.databinding.FragmentInfoBinding
+import com.example.tmcandroid.di.base.DaggerDaggerComponent
+import com.example.tmcandroid.di.modules.ViewModelFactory
 import com.example.tmcandroid.domain.models.PostNews
 import com.example.tmcandroid.presentation.view_models.PostInfoViewModel
 import com.squareup.picasso.Picasso
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.lang.IllegalStateException
+import javax.inject.Inject
 
 
 class InfoFragment : Fragment() {
 
     private lateinit var binding: FragmentInfoBinding
-    private val postsInfoViewModel: PostInfoViewModel by viewModel()
+  //  private val postsInfoViewModel: PostInfoViewModel by viewModel()
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+    private var _postsInfoViewModel: PostInfoViewModel? = null
+    private val postsInfoViewModel: PostInfoViewModel get() =
+        _postsInfoViewModel ?: throw IllegalStateException("PostInfoViewModel is not found")
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.application?.let {
+            DaggerDaggerComponent.factory().create(it).inject(this)
+        }
+        _postsInfoViewModel = viewModelFactory.create(PostInfoViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

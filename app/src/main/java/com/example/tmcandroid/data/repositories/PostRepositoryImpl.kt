@@ -6,13 +6,9 @@ import com.example.tmcandroid.data.remote.dto.toLocalPost
 import com.example.tmcandroid.data.repositories.local.PostsLocal
 import com.example.tmcandroid.data.repositories.remote.PostsRemote
 import com.example.tmcandroid.domain.repositories.PostRepository
-import org.koin.dsl.module
+import javax.inject.Inject
 
-val postRepositoryImplModule = module {
-    single<PostRepository> { PostRepositoryImpl(get(), get()) }
-}
-
-class PostRepositoryImpl(
+class PostRepositoryImpl @Inject constructor(
     private val postsLocal: PostsLocal,
     private val postsRemote: PostsRemote
 ) : PostRepository {

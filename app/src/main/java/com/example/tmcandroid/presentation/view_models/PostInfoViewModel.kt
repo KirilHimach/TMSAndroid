@@ -7,13 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.tmcandroid.domain.models.PostNews
 import com.example.tmcandroid.domain.use_cases.GetLocalPostUseCase
 import kotlinx.coroutines.launch
-import org.koin.dsl.module
+import javax.inject.Inject
 
 
-val postInfoViewModelModule = module {
-    single { PostInfoViewModel(get()) }
-}
-open class PostInfoViewModel(
+open class PostInfoViewModel @Inject constructor(
     private val getLocalPostUseCase: GetLocalPostUseCase
 ) : ViewModel() {
     private val _postInfo = MutableLiveData<PostNews>()

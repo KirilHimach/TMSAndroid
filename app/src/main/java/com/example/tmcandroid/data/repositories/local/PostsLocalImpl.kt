@@ -2,13 +2,10 @@ package com.example.tmcandroid.data.repositories.local
 
 import com.example.tmcandroid.data.local.Post
 import com.example.tmcandroid.data.local.PostsDao
-import org.koin.dsl.module
+import javax.inject.Inject
 
-val localRepositoryModule = module {
-    single<PostsLocal> { PostsLocalImpl(get()) }
-}
 
-class PostsLocalImpl(
+class PostsLocalImpl @Inject constructor(
     private val postsDao: PostsDao
 ) : PostsLocal {
 

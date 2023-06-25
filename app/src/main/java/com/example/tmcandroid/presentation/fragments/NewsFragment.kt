@@ -10,14 +10,32 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmcandroid.R
 import com.example.tmcandroid.presentation.adapters.NewsFragmentAdapter
 import com.example.tmcandroid.databinding.FragmentNewsBinding
+import com.example.tmcandroid.di.base.DaggerDaggerComponent
+import com.example.tmcandroid.di.modules.ViewModelFactory
 import com.example.tmcandroid.domain.models.PostNews
 import com.example.tmcandroid.presentation.view_models.PostsNewsViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.lang.IllegalStateException
+import javax.inject.Inject
 
 
 class NewsFragment : Fragment() {
     private lateinit var binding: FragmentNewsBinding
-    private val postNewsViewModel: PostsNewsViewModel by viewModel()
+
+   // private val postNewsViewModel: PostsNewsViewModel by viewModel()
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+    private var _postNewsViewModel: PostsNewsViewModel? = null
+    private val postNewsViewModel: PostsNewsViewModel get() =
+        _postNewsViewModel ?: throw IllegalStateException("PostNewsViewModel is not found")
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.application?.let {
+            DaggerDaggerComponent.factory().create(it).inject(this)
+        }
+        _postNewsViewModel = viewModelFactory.create(PostsNewsViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
